@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+      <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Responsive Admin</title>
+	<!-- BOOTSTRAP STYLES-->
+    <link href="{{ url_for('static', filename='assets/css/bootstrap.css') }}" rel="stylesheet" />
+     <!-- FONTAWESOME STYLES-->
+    <link href="{{ url_for('static', filename='assets/css/font-awesome.css') }}" rel="stylesheet" />
+        <!-- CUSTOM STYLES-->
+    <link href="{{ url_for('static', filename='assets/css/custom.css') }}" rel="stylesheet" />
+     <!-- GOOGLE FONTS-->
+   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+</head>
+<body>
+
+
+
+    <div id="wrapper">
+         <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="adjust-nav">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">
+                        <img src="{{ url_for('static', filename='image/logo1.png') }}">
+
+                    </a>
+
+                </div>
+
+            </div>
+        </div>
+        <!-- /. NAV TOP  -->
+        <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+                    <li>
+                        <a href="/dashboard"><i class="fa fa-desktop"></i>Home</a>
+                    </li>
+                    <li>
+                        <a href="/pro"><i class="fa fa-edit"></i>Product</a>
+                    </li>
+                    <li>
+                        <a href="/manage_order"><i class="fa fa-edit"></i>Manage Order</a>
+                    </li>
+                    <li class="active-link">
+                        <a href="/manage_customer"><i class="fa fa-edit"></i>Manage Customer</a>
+                    </li>
+                    <li>
+                        <a href="/view_service"><i class="fa fa-edit"></i>View Service</a>
+                    </li>
+                    <li>
+                        <a href="/view_feedback"><i class="fa fa-qrcode"></i>View Feedback</a>
+                    </li>
+                </ul>
+             </div>
+
+        </nav>
+        <!-- /. NAV SIDE  -->
+         <div id="page-wrapper">
+                            <div id="page-inner">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <h2>View Users</h2><br>
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">userid</th>
+                                    <th scope="col">First Name</th>
+                                     <th scope="col">Last Name</th>
+                                    <th scope="col">Username</th>
+                                     <th scope="col">Password</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Phone No.</th>
+                                    <th scope="col">Address</th>
+                                     <th scope="col">Country</th>
+                                     <th scope="col">State</th>
+                                     <th scope="col">Date</th>
+                                </tr>
+
+                            </thead>
+                            <tbody>
+                                {% for row in registration %}
+                                <tr>
+                                    <td>{{ row.0 }}</td>
+                                    <td>{{ row.1 }}</td>
+                                    <td>{{ row.2 }}</td>
+                                    <td>{{ row.3 }}</td>
+                                    <td>{{ row.4 }}</td>
+                                    <td>{{ row.5 }}</td>
+                                    <td>{{ row.6 }}</td>
+                                    <td>{{ row.7 }}</td>
+                                    <td>{{ row.8 }}</td>
+                                    <td>{{ row.9 }}</td>
+                                    <td>{{ row.10 }}</td>
+
+
+                                </tr>
+
+
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="footer">
+
+
+            <div class="row">
+                <div class="col-lg-12" >
+                    &copy;  2014 yourdomain.com | Design by: <a href="http://binarytheme.com" style="color:#fff;" target="_blank">www.binarytheme.com</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <!-- /. WRAPPER  -->
+    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
+    <!-- JQUERY SCRIPTS -->
+    <script src="{{ url_for('static', filename='assets/js/jquery-1.10.2.js') }}"></script>
+      <!-- BOOTSTRAP SCRIPTS -->
+    <script src="{{ url_for('static', filename='assets/js/bootstrap.min.js') }}"></script>
+      <!-- CUSTOM SCRIPTS -->
+    <script src="{{ url_for('static', filename='assets/js/custom.js') }}"></script>
+
+
+</body>
+</html>

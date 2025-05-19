@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Login Form </title>
+<!--  <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Montserrat:wght@800&amp;display=swap'>-->
+<!--<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'><link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">-->
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+<body>
+  <div class="login-container">
+<form action="/admin_login" method="post" class="login-form">
+
+  <h2>Admin Login</h2>
+  <div class="input-group">
+    <label for="adminnm">Admin name</label>
+    <input type="text" id="adminnm" name="adminnm" placeholder="Enter your username" required>
+  </div>
+
+<div class="input-group">
+        <label for="password">Password</label>
+    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+  </div>
+
+  <div>
+  {% if error %}
+  <p style="color:red;">{{ error }}</p>
+  {% endif %}
+  </div>
+  <br>
+  <div>
+   <input type="submit" value="Login" class="btn"><br><br>
+
+  </div>
+
+<!-- partial -->
+<!--  <script src='https://unpkg.com/sweetalert/dist/sweetalert.min.js'></script><script  src="{{ url_for('static', filename='js/script.js') }}"></script>-->
+
+</form>
+  </div>
+<script src="{{ url_for('static', filename='js/script.css') }}"></script>
+</body>
+</html>

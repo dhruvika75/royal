@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="login-container">
+    <form action="/login" method="post" class="login-form">
+      <h2>Login</h2>
+
+      <div class="input-group">
+        <label for="usernm">Username</label>
+        <input type="text" id="usernm" name="usernm" placeholder="Enter your username" required>
+      </div>
+
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+      </div>
+
+      {% if error %}
+        <p style="color:red;">{{ error }}</p>
+      {% endif %}
+
+      {% if show_captcha %}
+        <div class="captcha">
+          <label for="captcha">Please complete the CAPTCHA:</label>
+          <input type="text" id="captcha" name="captcha" placeholder="Enter CAPTCHA" required>
+          <p>{{ session.get('captcha') }}</p> <!-- Display the CAPTCHA text -->
+        </div>
+      {% endif %}
+
+      <div class="forgot-password">
+       <a href="{{ url_for('forgot_password') }}">Change Password?</a>
+
+      </div><br>
+
+      <div>
+        <input type="submit" value="Login" class="btn"><br><br>
+        <div>
+          <a href="/registration">Registration here</a>
+        </div><br>
+      </div>
+    </form>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

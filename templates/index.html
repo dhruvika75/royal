@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Motor Bike</title>
+
+	<link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet" >
+	 <link href="{{ url_for('static', filename='fonts/css/fontawesome.min.css') }}" rel="stylesheet" >
+	<link href="{{ url_for('static', filename='fonts/css/brands.min.css') }}" rel="stylesheet" />
+    <link href="{{ url_for('static', filename='fonts/css/solid.min.css') }}" rel="stylesheet" />
+	<link href="{{ url_for('static', filename='css/global.css') }}" rel="stylesheet">
+	<link href="{{ url_for('static', filename='css/index.css') }}" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+ <section id="header">
+        <nav class="navbar navbar-expand-lg navbar-light w-100">
+      <div class="container-xl">
+         <a class="d-flex p-2" href="index.html">
+<!--			 <b class="fs-3  d-block  mt-1 text-uppercase text-white"> <i class="fa fa-biking col_red me-1"></i> Motor Bike</b>-->
+<!--			 <i class="fa fa-biking col_red me-1"></i>-->
+			 <img src="{{ url_for('static', filename='image/logo1.png') }}">
+	     </a>
+         <button class="navbar-toggler offcanvas-nav-btn  ms-auto me-3" type="button">
+            <img src="{{ url_for('static', filename='image/goan-classic-350-motorcycle-des.png') }}" width="40" height="40" alt="Open TemplateOnweb website menu"/>
+         </button>
+         <div class="offcanvas offcanvas-start offcanvas-nav" style="width: 20rem">
+            <div class="offcanvas-header shadow">
+			    <a class="d-flex p-2" href="index.html">
+					  <b class="fs-3  d-block  mt-1 text-uppercase text-white"> <i class="fa fa-biking col_red me-1"></i> Motor Bike</b>
+				 </a>
+               <img src="{{ url_for('static', filename='image/4.avif') }}" width="40" height="40" class="ms-auto" data-bs-dismiss="offcanvas" aria-label="Close" alt="Close TemplateOnweb website menu"/>
+			   
+            </div>
+            <div class="offcanvas-body pt-0 align-items-center">
+               <ul class="navbar-nav align-items-lg-center ms-auto">
+			      <li class="nav-item"> 
+				      <a class="nav-link dropdown-toggle active" href="/" title="Visit home page">
+					  Home
+					  </a>
+				  </li>
+				  <li class="nav-item"> 
+				      <a class="nav-link dropdown-toggle" href="/about" title="Visit home page">
+					  About
+					  </a>
+				  </li>
+
+				  <li class="nav-item">
+				      <a class="nav-link dropdown-toggle" href="/product" title="Visit home page">
+					  Product
+					  </a>
+				  </li>
+
+				   <li class="nav-item">
+				      <a class="nav-link dropdown-toggle" href="/cart" title="Visit home page">
+					  Cart
+					  </a>
+				  </li>
+
+				    <li class="nav-item">
+				      <a class="nav-link dropdown-toggle" href="/service" title="Visit home page">
+					  Service
+					  </a>
+				  </li>
+
+				   <li class="nav-item">
+				      <a class="nav-link dropdown-toggle" href="/feedback" title="Visit home page">
+						  Feedback
+					  </a>
+				  </li>
+
+<!--				   <li class="nav-item">-->
+<!--				      <a class="nav-link dropdown-toggle" href="/checkout" title="Visit home page">-->
+<!--						  Checkout-->
+<!--					  </a>-->
+<!--				  </li>-->
+
+				    <li class="nav-item">
+				      <a class="nav-link dropdown-toggle" href="/order" title="Visit home page">
+						  Order Status
+					  </a>
+				  </li>
+
+				  <li class="nav-item"> 
+				      <a class="nav-link dropdown-toggle" href="/contact" title="Visit home page">
+					  Contact Us
+					  </a>
+				  </li>
+<!--				   <li class="nav-item">-->
+<!--				      <a class="nav-link dropdown-toggle" href="/login" title="Visit home page">-->
+<!--					  Login-->
+<!--					  </a>-->
+<!--				  </li>-->
+<!--				    <li class="nav-item">-->
+<!--				      <a class="nav-link dropdown-toggle" href="/registration" title="Visit home page">-->
+<!--					  Registration-->
+<!--					  </a>-->
+<!--				  </li>-->
+				   <li class="nav-item">
+						<a class="nav-link dropdown-toggle" href="{{ url_for('logout_user') }}" title="Logout">
+							Logout
+						</a>
+					</li>
+
+				   <li class="nav-item">
+				      <a class="nav-link dropdown-toggle" href="/admin_login" title="Visit home page">
+					  Admin
+					  </a>
+				   </li>
+
+               </ul>
+			   <ul class="navbar-nav align-items-lg-center ms-auto">
+
+				    <li class="nav-item dropdown">
+
+		<ul class="dropdown-menu drop_search p-3 shadow" aria-labelledby="navbarDropdown" style="">
+		<form class="navbar-form" role="search">
+		<div class="input-group">
+			<input type="text" class="form-control" placeholder="Search Keyword">
+			<span class="input-group-btn">
+				<button class="btn btn-primary bg_red border-0 rounded-0 p-2 px-3" type="button">
+					<i class="fa fa-search"></i> </button>
+			</span>
+		</div>
+		</form>
+		</ul>
+        </li>
+                 </ul>
+            </div>
+         </div>    
+		 
+		 
+         </div>
+      </div>
+   </nav>
+ </section>
+ 
+ <section id="center" class="center_home">
+ <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{{ url_for('static', filename='image/classic_650_new.avif') }}" class="d-block img-fluid" alt="..." >
+      <div class="carousel-caption d-md-block text-start">
+       <h5 class="text-uppercase"></h5>
+	   <h1 class="mt-3 mb-3"> <br> <span class="col_red"></span> </h1>
+
+<ul class="mb-0 mt-4">
+ <li class="d-inline-block me-2"></li>
+  <li class="d-inline-block"></a></li>
+</ul>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="{{ url_for('static', filename='image/home-top-banner-desc.jpg') }}" class="d-block img-fluid" alt="...">
+      <div class="carousel-caption d-md-block text-end">
+       <h5 class="text-uppercase col_light"></h5>
+	   <h1 class="mt-3 mb-3"><span class="col_red"></span> </h1>
+
+<ul class="mb-0 mt-4">
+ <li class="d-inline-block me-2"></li>
+  <li class="d-inline-block"></li>
+</ul>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="{{ url_for('static', filename='image/urban-monkey.png') }}"  class="d-block img-fluid" alt="...">
+      <div class="carousel-caption d-md-block text-start">
+       <h5 class="text-uppercase col_light"></h5>
+	   <h1 class="mt-3 mb-3"> <span class="col_red"></span> </h1>
+
+<ul class="mb-0 mt-4">
+ <li class="d-inline-block me-2"></li>
+  <li class="d-inline-block"></li>
+</ul>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+</section>
+
+
+
+ <section id="perform" class="pt-5 pb-5">
+   <div class="container-xl">
+    <div class="row perform_1 mb-5">
+	   <div class="col-md-6">
+	     <div class="perform_1_left text-end border-end px-4">
+
+
+
+{% if 'usernm' in session %}
+    <p>Welcome, {{ session['usernm'] }}!</p>
+{% else %}
+    <p>You are not logged in. Please <a href="{{ url_for('login') }}">login</a>.</p>
+{% endif %}
+
+
+
+		    <h2 class="mb-0">
+IMPROVE GENERAL <br> RIDEABILITY </h2>
+		 </div>
+	   </div>
+	   <div class="col-md-6">
+	     <div class="perform_1_right">
+		   <span class="fs-5 space_4 col_red fw-bold space_margin d-inline-block">PERFORMANCE</span>
+		 </div>
+	   </div>
+	</div>
+	<div class="row row-cols-1  row-cols-sm-2 row-cols-md-3 perform_2">
+	   <div class="col">
+	     <div class="perform_2_left border p-3">
+		   <a href="#"><img src="{{ url_for('static', filename='image/101.jpg') }}" alt="abc" class="img-fluid"></a>
+
+		   <h4><a href="#">Goan Classic 350</a></h4>
+		   <p class="mt-3">The "Goan Classic 350" is a special edition Royal Enfield motorcycle based on the Classic 350 platform, designed with a distinct bobber aesthetic inspired by the laid-back vibes of Goa, India. </p>
+		   <h5 class="mb-0 text-uppercase fs-6"></h5>
+		 </div>
+	   </div>
+	   <div class="col">
+	     <div class="perform_2_left border p-3">
+		   <a href="#"><img src="{{ url_for('static', filename='image/102.avif') }}" alt="abc" class="img-fluid"></a>
+
+		   <h4><a href="#">Bear 650</a></h4>
+		   <p class="mt-3">The Royal Enfield Bear 650 is a motorcycle with a 648 cc, air-cooled engine. It has a 13.7 liter fuel tank and a claimed mileage of 22 kilometers per liter.</p>
+		   <h5 class="mb-0 text-uppercase fs-6"></h5>
+		 </div>
+	   </div>
+	   <div class="col">
+	     <div class="perform_2_left border p-3">
+		   <a href="#"><img src="{{ url_for('static', filename='image/103.avif') }}" alt="abc" class="img-fluid"></a>
+
+		   <h4><a href="#">Guerrilla 450</a></h4>
+		   <p class="mt-3">The Royal Enfield Guerrilla 450 is a modern-retro street naked motorcycle. It has a 452 cc liquid-cooled engine, a six-speed manual transmission, and a fuel tank capacity of 11 liters.  </p>
+		   <h5 class="mb-0 text-uppercase fs-6"></h5>
+		 </div>
+	   </div>
+	</div>
+	   <div class="row row-cols-1  row-cols-sm-2 row-cols-md-3 perform_2">
+	   <div class="col">
+	     <div class="perform_2_left border p-3">
+		   <a href="#"><img src="{{ url_for('static', filename='image/bullet350.avif') }}" alt="abc" class="img-fluid"></a>
+
+		   <h4><a href="#">Bullet 350</a></h4>
+		   <p class="mt-3">The **Royal Enfield Bullet 350** is a legendary motorcycle known for its iconic thump and timeless design. It features a 349cc engine, offering a smooth, classic ride with a vintage appeal. </p>
+		   <h5 class="mb-0 text-uppercase fs-6"></h5>
+		 </div>
+	   </div>
+	   <div class="col">
+	     <div class="perform_2_left border p-3">
+		   <a href="#"><img src="{{ url_for('static', filename='image/classic350.webp') }}" alt="abc" class="img-fluid"></a>
+
+		   <h4><a href="#">Classic 350</a></h4>
+		   <p class="mt-3">The **Royal Enfield Classic 350** is a stylish cruiser with a retro design, offering a smooth and comfortable ride. It features a 349cc engine, combining modern performance with vintage aesthetics. </p>
+		   <h5 class="mb-0 text-uppercase fs-6"></h5>
+		 </div>
+	   </div>
+	   <div class="col">
+	     <div class="perform_2_left border p-3">
+		   <a href="#"><img src="{{ url_for('static', filename='image/himalayan.avif') }}" alt="abc" class="img-fluid"></a>
+
+		   <h4><a href="#">Himalayan</a></h4>
+		   <p class="mt-3">The **Royal Enfield Himalayan** is an adventure touring motorcycle designed for off-road exploration. It features a 411cc engine, built to handle rugged terrains with comfort and durability.  </p>
+		   <h5 class="mb-0 text-uppercase fs-6"></h5>
+		 </div>
+	   </div>
+	</div>
+	   <div class="row row-cols-1  row-cols-sm-2 row-cols-md-3 perform_2">
+	   <div class="col">
+	     <div class="perform_2_left border p-3">
+		   <a href="#"><img src="{{ url_for('static', filename='image/hunter350.avif') }}" alt="abc" class="img-fluid"></a>
+
+		   <h4><a href="#">Hunter 350</a></h4>
+		   <p class="mt-3">The **Royal Enfield Hunter 350** is a modern, agile motorcycle designed for urban commuting. It features a 349cc engine, offering a smooth, responsive ride with a stylish, minimalist design. </p>
+		   <h5 class="mb-0 text-uppercase fs-6"></h5>
+		 </div>
+	   </div>
+	   <div class="col">
+	     <div class="perform_2_left border p-3">
+		   <a href="#"><img src="{{ url_for('static', filename='image/meteor350.avif') }}" alt="abc" class="img-fluid"></a>
+
+		   <h4><a href="#">Meteor 350</a></h4>
+		   <p class="mt-3">The **Royal Enfield Meteor 350** is a cruiser motorcycle designed for long-distance comfort. It features a 349cc engine, combining smooth performance with modern features and a classic design.</p>
+		   <h5 class="mb-0 text-uppercase fs-6"></h5>
+		 </div>
+	   </div>
+	   <div class="col">
+	     <div class="perform_2_left border p-3">
+		   <a href="#"><img src="{{ url_for('static', filename='image/shotgun650.avif') }}" alt="abc" class="img-fluid"></a>
+
+		   <h4><a href="#">Shotgun 650</a></h4>
+		   <p class="mt-3">The **Royal Enfield Shotgun 650** is a sleek, performance-oriented motorcycle with a bold design. It features a 648cc twin-cylinder engine, offering a powerful and dynamic riding experience.</p>
+		   <h5 class="mb-0 text-uppercase fs-6"></h5>
+		 </div>
+	   </div>
+	</div>
+	   <div class="row row-cols-1  row-cols-sm-2 row-cols-md-3 perform_2">
+	   <div class="col">
+	     <div class="perform_2_left border p-3">
+		   <a href="#"><img src="{{ url_for('static', filename='image/scram440.avif') }}" alt="abc" class="img-fluid"></a>
+
+		   <h4><a href="#">Scram 440</a></h4>
+		   <p class="mt-3">The **Royal Enfield Scram 440** is a versatile adventure bike designed for both on-road and off-road riding. It features a 440cc engine, combining rugged performance with a stylish, minimalist design. </p>
+		   <h5 class="mb-0 text-uppercase fs-6"></h5>
+		 </div>
+	   </div>
+	   </div>
+	</div>
+ </section>
+
+
+	 <section id="footer" class="pt-5 pb-5 bg-dark">
+	   <div class="container-xl">
+		 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 footer_1">
+		   <div class="col">
+			<div class="footer_1_left">
+			  <h4 class="text-white mb-3">Royal Enfield</h4>
+			  <p class="text-white-50">Royal Enfield has been in business since 1901, and there are Royal Enfield dealers in Amreli, Gujarat. </p>
+			  <span class="d-block d-flex text-white-50"><i class="fa fa-clock col_red me-2 mt-1"></i> Monday-Friday: 9am to 5pm; Satuday: 10am to 2pm</span>
+			</div>
+		   </div>
+		   <div class="col">
+			<div class="footer_1_left">
+			  <h4 class="text-white mb-3">OUR SERVICES</h4>
+			  <div class="row footer_1ism">
+			 <span class="col-md-12 col-6  d-inline-block"><h6 class="text-white-50 link">Free Service </h6></span>
+
+			</div>
+			</div>
+		   </div>
+		   <div class="col">
+			<div class="footer_1_left">
+			  <h4 class="text-white mb-3">OUR OFFICE</h4>
+			  <ul class="mb-0">
+				<li class="text-white-50 d-flex"><i class="fa fa-map-marker col_red mt-1 me-2 fs-5"></i> Circle, Plot No 6, Sy No 152/1, Paiki 2 Rajkot Savarkundla By Pass Road Nr Lathi Bye Pass, Amreli, Gujarat 365601</li>
+				<li class="d-flex mt-3">
+				<i class="fa fa-phone col_red mt-1 me-2 fs-5"></i>
+				<span>
+				 <h6 class="text-white-50 link" >+(91) 96195 60310</h6><br>
+
+				 </span>
+				 </li>
+				 <li class="d-flex mt-3">
+				<i class="fa fa-envelope col_red mt-1 me-2 fs-5"></i>
+				<span>
+				 <h6 class="text-white-50 link">royalenfield@gmail.com</h6><br>
+
+				 </span>
+				 </li>
+			  </ul>
+			</div>
+		   </div>
+		   <div class="col">
+			<div class="footer_1_left">
+			  <h4 class="text-white mb-3">Quick Links</h4>
+			  <div class="row footer_1ism">
+			 <span class="col-md-12 col-6  d-inline-block"><a class="text-white-50 link" href="/about"> About Us</a></span>
+
+		 <span class="mt-2 col-md-12 col-6  d-inline-block"><a class="text-white-50 link" href="/contact">Contact Us </a></span>
+		 <span class="mt-2 col-md-12 col-6 mb-0  d-inline-block"><a class="text-white-50 link" href="/product"> Product</a></span>
+		  <span class="mt-2 col-md-12 col-6 mb-0  d-inline-block"><a class="text-white-50 link" href="/checkout">Checkout </a></span>
+			<span class="mt-2 col-md-12 col-6 mb-0  d-inline-block"><a class="text-white-50 link" href="/feedback"> Feedback</a></span>
+			</div>
+			</div>
+		   </div>
+		 </div>
+	   </div>
+	 </section>
+
+	 <section id="footer_bottom" class="pt-3 pb-3 bg-black">
+	   <div class="container-xl">
+		 <div class="footer_bottom_1 row">
+			<div class="col-md-8">
+			  <div class="footer_bottom_1_left pt-2">
+				<p class="mb-0 text-white-50"> Design by <a class="col_red fw-bold"  >jinsha godhani , hetvi bhanderi , drashti gajera</a></p>
+			  </div>
+			</div>
+
+		</div>
+	   </div>
+
+	 </section>
+
+
+	<script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/theme.min.js') }}"></script>
+</body>
+</html>

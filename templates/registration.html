@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>registration</title>
+<!--  <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Montserrat:wght@800&amp;display=swap'>-->
+<!--<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'><link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">-->
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+ <div class="login-container">
+<form action="/registration" method="post" class="login-form">
+ <h2>Registration</h2>
+
+<!--   <div class="input-group">-->
+<!--    <label for="firstnm">First Name</label>-->
+<!--    <input type="text" id="firstnm" name="firstnm" placeholder="Enter first name" required>-->
+<!--  </div>-->
+
+<!--      <div class="input-group">-->
+<!--    <label for="lastnm">Last Name</label>-->
+<!--    <input type="text" id="lastnm" name="lastnm" placeholder="Enter last name" required>-->
+<!--  </div>-->
+
+   <div class="input-groupa">
+    <div style="flex: 1;">
+        <label for="firstnm">Firstname</label>
+        <input type="text" id="firstnm" name="firstnm" placeholder="Enter first name" required>
+    </div>
+    <div style="flex: 1;">
+        <label for="lastnm">Lastname</label>
+        <input type="text" id="lastnm" name="lastnm" placeholder="Enter last name" required>
+    </div>
+</div>
+
+
+     <div class="input-group">
+    <label for="usernm">Username</label>
+    <input type="text" id="usernm" name="usernm" placeholder="Enter username" required>
+  </div>
+
+    <div class="input-group">
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password"  required>
+  </div>
+
+      <div class="input-group">
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" placeholder="Enter your email id" required>
+  </div>
+
+     <div class="input-groupa">
+    <div style="flex: 1;">
+        <label for="phonno">Phoneno</label>
+        <input type="text" id="phonno" name="phonno" placeholder="Enter your phone no" required>
+    </div>
+    <div style="flex: 1;">
+        <label for="address">Address</label>
+        <textarea id="address" name="address" placeholder="Enter your address" required></textarea>
+    </div>
+</div>
+
+    <div class="input-groupa">
+    <div style="flex: 1;">
+        <label for="country">Country</label>
+        <input type="text" id="country" name="country" placeholder="Enter country" required>
+    </div>
+    <div style="flex: 1;">
+        <label for="state">State</label>
+        <input type="text" id="state" name="state" placeholder="Enter state" required>
+    </div>
+</div>
+
+     <div class="input-group">
+    <label for="date">Date</label>
+    <input type="date" id="date" name="date">
+     </div>
+
+
+  <div>
+   <input type="submit" value="Register" class="btn"><br><br>
+     </div>
+
+<!-- partial -->
+<!--  <script src='https://unpkg.com/sweetalert/dist/sweetalert.min.js'></script><script  src="{{ url_for('static', filename='js/script.js') }}"></script>-->
+
+</form>
+ </div>
+</body>
+</html>

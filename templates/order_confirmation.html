@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            color: black;
+        }
+
+        /* QR Code */
+        .qr-code {
+            margin-top: 20px;
+        }
+        .qr-code img {
+            max-width: 200px;
+            height: auto;
+        }
+
+        /* Order Summary */
+        .order-summary {
+            margin-top: 30px;
+        }
+        .order-summary a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: grey;
+            color: black;
+            border-radius: 4px;
+            text-decoration: none;
+        }
+        .order-summary a:hover {
+            background-color: darkgrey;
+        }
+
+        /* Invoice / Bill */
+        #bill {
+            display: none; /* Initially hidden */
+            border-top: 2px solid black;
+            margin-top: 20px;
+            padding-top: 20px;
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+        }
+        .bill-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        .bill-table th, .bill-table td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: left;
+        }
+        .bill-table th {
+            background: lightgrey;
+            color: black;
+        }
+        .bill-table td strong {
+            color: black;
+        }
+    </style>
+    <script>
+    // Redirect to bill.html after 5 seconds
+    window.onload = function() {
+        setTimeout(function() {
+            window.location.href = "{{ url_for('bill', cart_id=cart_id) }}";
+        }, 5000);
+    };
+</script>
+
+</head>
+<body>
+    <div class="container">
+        <h1>Thank You for Your Order!</h1>
+        <p>Your order has been successfully placed.</p>
+        <p>Your Order QR Code: <strong>{{ qrcode }}</strong></p>
+
+        <div class="order-summary">
+            <h2>Order Summary</h2>
+            <p>We'll send you a confirmation email shortly.</p>
+            <a href="{{ url_for('index') }}" class="btn btn-primary">Go to Home</a>
+        </div>
+
+        <!-- QR Code for the Order -->
+        <div class="qr-code">
+            <h3>Scan this QR Code for your Order</h3>
+            <img src="{{ url_for('generate_qr', data=qrcode) }}" alt="QR Code">
+        </div>
+    </div>
+</body>
+</html>

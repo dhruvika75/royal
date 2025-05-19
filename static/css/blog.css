@@ -1,0 +1,60 @@
+/*
+Template Name: Motor Bike
+File: Layout CSS
+Author: TemplatesOnWeb
+Author URI: https://www.templateonweb.com/
+Licence: <a href="https://www.templateonweb.com/license">Website Template Licence</a>
+*/
+
+/*********************blog****************/
+.center_blog {
+    background-image: url(../image/2.jpg);
+    background-position: center center;
+    background-size: cover;
+}
+.blog_1_right1_inner_left{
+	margin:1px; 
+ }
+.center_blog_detail {
+    background-image: url(../image/1.jpg);
+    background-position: center center;
+    background-size: cover;
+}
+
+/*********************blog_end****************/
+
+
+@media screen and (max-width : 767px){
+.blog_1_right1 h4{
+	text-align:center; 
+ }   
+ }
+
+
+@media (min-width:576px) and (max-width:767px) {
+
+ }
+ 
+@media (min-width:768px) and (max-width:991px) {
+.blog_1_right1   ul li{
+font-size:14px;
+padding-left:0!important;
+padding-right:0!important;
+ }
+.blog_1_right1   ul li img{
+width:60px;
+ }
+ }
+
+@media (min-width:992px) and (max-width:1200px) {
+
+ }
+
+@media (min-width:1201px) and (max-width:1300px) {
+
+ }
+@media (min-width:1400px) and (max-width:2000px) {
+
+ }
+
+

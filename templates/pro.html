@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product List</title>
+    <!-- BOOTSTRAP STYLES-->
+    <link href="{{ url_for('static', filename='assets/css/bootstrap.css') }}" rel="stylesheet" />
+    <!-- FONTAWESOME STYLES-->
+    <link href="{{ url_for('static', filename='assets/css/font-awesome.css') }}" rel="stylesheet" />
+    <!-- CUSTOM STYLES-->
+    <link href="{{ url_for('static', filename='assets/css/custom.css') }}" rel="stylesheet" />
+    <!-- GOOGLE FONTS-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+</head>
+<body>
+    <div id="wrapper">
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="adjust-nav">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">
+                        <img src="{{ url_for('static', filename='image/logo1.png') }}" />
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+        <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+                    <li>
+                        <a href="/dashboard"><i class="fa fa-desktop"></i>Home</a>
+                    </li>
+                    <li class="active-link">
+                        <a href="/pro"><i class="fa fa-edit"></i>Product</a>
+                    </li>
+                    <li>
+                        <a href="/manage_order"><i class="fa fa-edit"></i>Manage Order</a>
+                    </li>
+                    <li>
+                        <a href="/manage_customer"><i class="fa fa-edit"></i>Manage Customer</a>
+                    </li>
+                    <li>
+                        <a href="/view_service"><i class="fa fa-edit"></i>View Service</a>
+                    </li>
+                    <li>
+                        <a href="/view_feedback"><i class="fa fa-qrcode"></i>View Feedback</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div id="page-wrapper">
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2>Product List <button class="btn btn-primary float-right" data-toggle="modal" data-target="#myModal">Add Product</button></h2>
+
+<!--                        {% with messages = get_flashed_messages() %}-->
+<!--                        {% if messages %}-->
+<!--                        {% for message in messages %}-->
+<!--                        <div class="alert alert-success alert-dismissable" role="alert">-->
+<!--                            <button type="button" class="close" data-dismiss="alert" aria-label="close">-->
+<!--                                <span aria-hidden="true">&times;</span>-->
+<!--                            </button>-->
+<!--                            {{ message }}-->
+<!--                        </div>-->
+<!--                        {% endfor %}-->
+<!--                        {% endif %}-->
+<!--                        {% endwith %}-->
+
+                        <!-- Add New Product Modal -->
+                        <div id="myModal" class="modal fade" role="dialog">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title text-primary">Please Add New Product</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form action="{{ url_for('add') }}" method="POST" enctype="multipart/form-data">
+                                            <div class="form-group">
+                                                <label>Product Name</label>
+                                                <input type="text" name="pnm" class="form-control" placeholder="Enter Product Name">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Price</label>
+                                                <input type="text" name="price" class="form-control" placeholder="Enter Price">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Description</label>
+                                                <input type="text" name="description" class="form-control" placeholder="Enter Description">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Image</label>
+                                                <input type="file" name="image" class="form-control" placeholder="Choose Image">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Stock</label>
+                                                <input type="text" name="stock" class="form-control" placeholder="Enter Stock">
+                                            </div>
+                                            <button type="submit" class="btn btn-primary">Save</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product Table -->
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">S/N</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Price</th>
+                                    <th scope="col">Description</th>
+                                    <th scope="col">Image</th>
+                                    <th scope="col">Stock</th>
+                                    <th scope="col">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for row in students %}
+                                <tr>
+                                    <td>{{ row.0 }}</td>
+                                    <td>{{ row.1 }}</td>
+                                    <td>₹{{ row.2 }}</td>
+                                    <td>{{ row.3 }}</td>
+                                    <td><img src="{{ url_for('static', filename=row.4) }}" width="50"></td>
+                                     <td id="admin_stock_{{ row.0 }}">{{ row.5 }}</td>
+                                    <td>
+                                        <a href="/update/{{ row.0 }}" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modaledit{{ row.0 }}">Edit</a>
+                                        <a href="/delete/{{ row.0 }}" onclick="return confirm('Are you sure you want to delete?')" class="btn btn-danger btn-sm">Delete</a>
+                                    </td>
+                                </tr>
+
+                                <!-- Edit Product Modal -->
+                            <div id="modaledit{{ row.0 }}" class="modal fade" role="dialog">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title text-primary">Update Product Details</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form action="{{ url_for('update') }}" method="POST" enctype="multipart/form-data">
+                                                <input type="hidden" name="id" value="{{ row.0 }}">
+                                                <div class="form-group">
+                                                    <label>Product Name</label>
+                                                    <input type="text" name="pnm" class="form-control" value="{{ row.1 }}" placeholder="Enter Product Name">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Price</label>
+                                                    <input type="text" name="price" class="form-control" value="{{ row.2 }}" placeholder="Enter Price">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Description</label>
+                                                    <input type="text" name="description" class="form-control" value="{{ row.3 }}" placeholder="Enter Description">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Stock</label>
+                                                    <input type="text" name="stock" class="form-control" value="{{ row.5 }}" placeholder="Enter Stock">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Image</label>
+                                                    <input type="file" name="image" class="form-control" placeholder="Choose Image">
+
+                                                </div>
+                                                <button type="submit" class="btn btn-success">Update</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JQUERY SCRIPTS -->
+    <script src="{{ url_for('static', filename='assets/js/jquery-1.10.2.js') }}"></script>
+    <!-- BOOTSTRAP SCRIPTS -->
+    <script src="{{ url_for('static', filename='assets/js/bootstrap.min.js') }}"></script>
+    <!-- CUSTOM SCRIPTS -->
+    <script src="{{ url_for('static', filename='assets/js/custom.js') }}"></script>
+
+</body>
+</html>

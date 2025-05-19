@@ -1,0 +1,112 @@
+/*
+Template Name: Motor Bike
+File: Layout CSS
+Author: TemplatesOnWeb
+Author URI: https://www.templateonweb.com/
+Licence: <a href="https://www.templateonweb.com/license">Website Template Licence</a>
+*/
+
+/*********************cart****************/
+.center_cart {
+    background-image: url(../image/1.jpg);
+    background-position: center center;
+    background-size: cover;
+}
+
+.cart_3l h6{
+	 background:  var(--bg_light);
+	 padding:10px 20px 10px 20px;
+	 border-bottom:1px solid var(--red);
+ }
+.cart_3l1{
+	 border-bottom:1px solid var(--border_light);
+	 padding-bottom:20px;
+ }
+
+.cart_3l1i2 h6{
+	display:inline-block;
+	margin-right:13px;
+	font-weight:bold;
+ }
+
+.cart_3r .head_1{
+	 background: var(--bg_light);
+	 padding:10px 20px 10px 20px;
+	 border-bottom:1px solid var(--red);
+	 text-align:center;
+ }
+.cart_3r .form-control{
+	margin-top:15px;
+	height:110px;
+ }
+.cart_3r1 .form-control{
+	margin-top:10px; 
+ }
+
+.sub_hblog .input-group .form-control{
+	height: 51px;
+ }
+ 
+.cart_3l1i2 .form-control{
+	width:24%;
+	float:left;
+	margin-right:15px;
+	height:44px;
+ }
+.cart_3l1i2 .button{
+	padding-top:13px!important;
+	padding-bottom:13px!important;
+ }
+
+/*********************cart_end****************/
+
+
+@media screen and (max-width : 767px){
+.cart_2 h5{
+	text-align:center!important; 
+ }
+.cart_3l h6{
+	text-align:center;  
+ }
+.cart_3r h6{
+	text-align:center;  
+ }
+.cart_3r h5{
+	text-align:center;  
+ }
+.cart_3l1i2 .button{
+	padding-left:10px!important;
+	padding-right:10px!important; 
+ }
+.cart_3r{
+	margin-top:15px; 
+ }
+.cart_3l1i2 .form-control {
+	margin-bottom:10px;
+}
+ }
+
+
+@media (min-width:576px) and (max-width:767px) {
+.cart_3l1i2 .form-control{
+	width:26%; 
+ }
+ }
+@media (min-width:768px) and (max-width:991px) {
+.cart_3l1i2 .form-control{
+	width:16%; 
+ }
+.cart_3l1i2 .button{
+	padding-left:10px!important;
+	padding-right:10px!important; 
+ }
+
+ }
+
+@media (min-width:992px) and (max-width:1200px) {
+.cart_3l1i2 .button{
+	padding-left:10px!important;
+	padding-right:10px!important; 
+ }
+
+ }

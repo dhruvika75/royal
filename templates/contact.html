@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Motor Bike</title>
+ <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        input, textarea {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            padding: 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .team-info {
+            background-color: #f1f1f1;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 40px;
+        }
+        .team-info h3 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .team-member {
+            margin: 15px 0;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .team-member p {
+            margin: 5px 0;
+        }
+	    .email-link {
+   text-transform: lowercase;
+}
+
+
+    </style>
+	<link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet" >
+	 <link href="{{ url_for('static', filename='fonts/css/fontawesome.min.css') }}" rel="stylesheet" >
+	<link href="{{ url_for('static', filename='fonts/css/brands.min.css') }}" rel="stylesheet" />
+    <link href="{{ url_for('static', filename='fonts/css/solid.min.css') }}" rel="stylesheet" />
+	<link href="{{ url_for('static', filename='css/global.css') }}" rel="stylesheet">
+	<link href="{{ url_for('static', filename='css/contact.css') }}" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+ <section id="header">
+        <nav class="navbar navbar-expand-lg navbar-light w-100">
+      <div class="container-xl">
+         <a class="d-flex p-2" href="index.html">
+			<img src="{{ url_for('static', filename='image/logo1.png') }}">
+		 </a>
+         <button class="navbar-toggler offcanvas-nav-btn  ms-auto me-3" type="button">
+            <img src="{{ url_for('static', filename='image/icons-svg/list.svg') }}" width="40" height="40" alt="Open TemplateOnweb website menu"/>
+         </button>
+         <div class="offcanvas offcanvas-start offcanvas-nav" style="width: 20rem">
+            <div class="offcanvas-header shadow">
+			    <a class="d-flex p-2" href="index.html">
+					  <b class="fs-3  d-block  mt-1 text-uppercase text-white"> <i class="fa fa-biking col_red me-1"></i> Motor Bike</b>
+				 </a>
+               <img src="{{ url_for('static', filename='image/icons-svg/x.svg') }}" width="40" height="40" class="ms-auto" data-bs-dismiss="offcanvas" aria-label="Close" alt="Close TemplateOnweb website menu"/>
+			   
+            </div>
+            <div class="offcanvas-body pt-0 align-items-center">
+               <ul class="navbar-nav align-items-lg-center ms-auto">
+			      <li class="nav-item"> 
+				      <a class="nav-link dropdown-toggle" href="/" title="Visit home page">
+					  Home
+					  </a>
+				  </li>
+				  <li class="nav-item"> 
+				      <a class="nav-link dropdown-toggle" href="/about" title="Visit home page">
+					  About
+					  </a>
+				  </li>
+                  
+		          <li class="nav-item">
+				      <a class="nav-link dropdown-toggle" href="/product" title="Visit home page">
+					  Product
+					  </a>
+				  </li>
+
+				   <li class="nav-item">
+				      <a class="nav-link dropdown-toggle" href="/cart" title="Visit home page">
+					  Cart
+					  </a>
+				  </li>
+
+				    <li class="nav-item">
+				      <a class="nav-link dropdown-toggle" href="/service" title="Visit home page">
+					  Service
+					  </a>
+				  </li>
+
+				   <li class="nav-item">
+				      <a class="nav-link dropdown-toggle" href="/feedback" title="Visit home page">
+						  Feedback
+					  </a>
+				  </li>
+ <li class="nav-item">
+				      <a class="nav-link dropdown-toggle" href="/order" title="Visit home page">
+						  Order Status
+					  </a>
+				  </li>
+
+
+
+				  <li class="nav-item">
+				      <a class="nav-link dropdown-toggle active" href="/contact" title="Visit home page">
+					  Contact Us
+					  </a>
+				  </li>
+				  
+				  
+                </ul>
+			   <ul class="navbar-nav align-items-lg-center ms-auto">
+
+				    <li class="nav-item dropdown">
+
+		<ul class="dropdown-menu drop_search p-3 shadow" aria-labelledby="navbarDropdown" style="">
+		<form class="navbar-form" role="search">
+		<div class="input-group">
+			<input type="text" class="form-control" placeholder="Search Keyword">
+			<span class="input-group-btn">
+				<button class="btn btn-primary bg_red border-0 rounded-0 p-2 px-3" type="button">
+					<i class="fa fa-search"></i> </button>
+			</span>
+		</div>
+		</form>
+		</ul>
+        </li>
+                 </ul>
+            </div>
+         </div>
+
+
+         </div>
+      </div>
+   </nav>
+ </section>
+
+
+
+
+
+
+ <section id="center" class="center_home">
+ <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{{ url_for('static', filename='image/classic_650_new.avif') }}" class="d-block img-fluid" alt="..." >
+      <div class="carousel-caption d-md-block text-start">
+       <h5 class="text-uppercase"></h5>
+	   <h1 class="mt-3 mb-3"> <br> <span class="col_red"></span> </h1>
+
+		<ul class="mb-0 mt-4">
+		<li class="d-inline-block me-2"></li>
+		<li class="d-inline-block"></a></li>
+		</ul>
+      </div>
+    </div>
+</div>
+ </div>
+</section>
+
+
+
+
+
+    <!-- Team Information Section -->
+    <div class="container team-info">
+        <h3>Meet the Team</h3>
+
+        <!-- Member 1 -->
+        <div class="team-member">
+            <h4>Jinsha Godhani</h4>
+            <p><strong>Address:</strong> Navi Haliyad</p>
+			 <p><strong>Mobile No:</strong> 9316058810</p>
+            <p><strong>Email:</strong> <a href="mailto:jinshagodhani680@gmail.com" class="email-link">jinshagodhani680@gmail.com</a></p>
+        </div>
+
+        <!-- Member 2 -->
+        <div class="team-member">
+            <h4>Hetvi Bhanderi</h4>
+            <p><strong>Address:</strong> Mandasan</p>
+			 <p><strong>Mobile No:</strong> 9687329283</p>
+            <p><strong>Email:</strong> <a href="mailto:hetubhaderi0807@gmail.com" class="email-link">hetubhaderi0807@gmail.com</a></p>
+        </div>
+
+        <!-- Member 3 -->
+        <div class="team-member">
+            <h4>Drashti Gajera</h4>
+            <p><strong>Address:</strong> Surat</p>
+			 <p><strong>Mobile No:</strong> 90540541668</p>
+            <p><strong>Email:</strong> <a href="mailto:drashtigajera@gmail.com" class="email-link">drashtigajera54@gmail.com</a></p>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+ <section id="footer" class="pt-5 pb-5 bg-dark">
+	   <div class="container-xl">
+		 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 footer_1">
+		   <div class="col">
+			<div class="footer_1_left">
+			  <h4 class="text-white mb-3">Royal Enfield</h4>
+			  <p class="text-white-50">Royal Enfield has been in business since 1901, and there are Royal Enfield dealers in Amreli, Gujarat. </p>
+			  <span class="d-block d-flex text-white-50"><i class="fa fa-clock col_red me-2 mt-1"></i> Monday-Friday: 9am to 5pm; Satuday: 10am to 2pm</span>
+			</div>
+		   </div>
+		   <div class="col">
+			<div class="footer_1_left">
+			  <h4 class="text-white mb-3">OUR SERVICES</h4>
+			  <div class="row footer_1ism">
+			 <span class="col-md-12 col-6  d-inline-block"><h6 class="text-white-50 link">Free Service </h6></span>
+
+			</div>
+			</div>
+		   </div>
+		   <div class="col">
+			<div class="footer_1_left">
+			  <h4 class="text-white mb-3">OUR OFFICE</h4>
+			  <ul class="mb-0">
+				<li class="text-white-50 d-flex"><i class="fa fa-map-marker col_red mt-1 me-2 fs-5"></i> Circle, Plot No 6, Sy No 152/1, Paiki 2 Rajkot Savarkundla By Pass Road Nr Lathi Bye Pass, Amreli, Gujarat 365601</li>
+				<li class="d-flex mt-3">
+				<i class="fa fa-phone col_red mt-1 me-2 fs-5"></i>
+				<span>
+				 <h6 class="text-white-50 link" >+(91) 96195 60310</h6><br>
+
+				 </span>
+				 </li>
+				 <li class="d-flex mt-3">
+				<i class="fa fa-envelope col_red mt-1 me-2 fs-5"></i>
+				<span>
+				 <h6 class="text-white-50 link">royalenfield@gmail.com</h6><br>
+
+				 </span>
+				 </li>
+			  </ul>
+			</div>
+		   </div>
+		   <div class="col">
+			<div class="footer_1_left">
+			  <h4 class="text-white mb-3">Quick Links</h4>
+			  <div class="row footer_1ism">
+			 <span class="col-md-12 col-6  d-inline-block"><a class="text-white-50 link" href="/about"> About Us</a></span>
+
+		 <span class="mt-2 col-md-12 col-6  d-inline-block"><a class="text-white-50 link" href="/contact">Contact Us </a></span>
+		 <span class="mt-2 col-md-12 col-6 mb-0  d-inline-block"><a class="text-white-50 link" href="/product"> Product</a></span>
+		  <span class="mt-2 col-md-12 col-6 mb-0  d-inline-block"><a class="text-white-50 link" href="/checkout">Checkout </a></span>
+			<span class="mt-2 col-md-12 col-6 mb-0  d-inline-block"><a class="text-white-50 link" href="/feedback"> Feedback</a></span>
+			</div>
+			</div>
+		   </div>
+		 </div>
+	   </div>
+	 </section>
+
+	 <section id="footer_bottom" class="pt-3 pb-3 bg-black">
+	   <div class="container-xl">
+		 <div class="footer_bottom_1 row">
+			<div class="col-md-8">
+			  <div class="footer_bottom_1_left pt-2">
+				<p class="mb-0 text-white-50"> Design by <a class="col_red fw-bold"  >jinsha godhani , hetvi bhanderi , drashti gajera</a></p>
+			  </div>
+			</div>
+
+		</div>
+	   </div>
+
+	 </section>
+
+
+
+	<script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/theme.min.js') }}"></script>
+
+</body>
+</html>

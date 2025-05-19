@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal Enfield Invoice</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .container {
+            max-width: 800px;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .header img {
+            max-width: 150px;
+        }
+        .header h1 {
+            color: #343a40;
+            font-size: 32px;
+            margin-top: 10px;
+        }
+        .yellow-bar {
+            background-color: #FFC107;
+            height: 25px;
+            margin: 10px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 12px;
+            text-align: center;
+        }
+        th {
+            background-color: #FFC107;
+            color: #343a40;
+        }
+        .total-row td {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="{{ url_for('static', filename='image/logo.png') }}" alt="Royal Enfield Logo">
+            <h1>Tax Invoice</h1>
+            <div class="yellow-bar"></div>
+        </div>
+
+        <!-- Customer Details -->
+        <table>
+            <tr><th>Customer Name</th><td>{{ customer_name }}</td></tr>
+            <tr><th>Contact Number</th><td>{{ contact_number }}</td></tr>
+            <tr><th>Vehicle Model</th><td>{{ vehicle_model }}</td></tr>
+        </table>
+
+        <!-- Product Details -->
+        <table>
+            <tr>
+                <th>Sr. No</th>
+                <th>Description</th>
+                <th>Quantity</th>
+
+                <th>Discount</th>
+                <th>GST</th>
+                <th>Amount</th>
+            </tr>
+            <!-- Loop through all products -->
+
+            <tr>
+                <td>1</td>
+                <td>{{ vehicle_model }}</td>
+                <td>1</td>
+
+
+                <td>-</td>
+                <td>{{ gst }}</td>
+                <td>{{ total }}</td>
+            </tr>
+
+            <tr class="total-row">
+                <td colspan="5">Net Amount</td>
+                <td>{{ net_amount }}</td>
+            </tr>
+        </table>
+
+        <div class="yellow-bar"></div>
+        <p>Bill ID: {{ bill_id }}</p>
+        <p>Bill Date: {{ bill_date }}</p>
+    </div>
+</body>
+</html>
